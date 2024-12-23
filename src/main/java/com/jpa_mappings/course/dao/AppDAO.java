@@ -1,7 +1,10 @@
 package com.jpa_mappings.course.dao;
 
+import com.jpa_mappings.course.entity.Course;
 import com.jpa_mappings.course.entity.Instructor;
 import com.jpa_mappings.course.entity.InstructorDetail;
+
+import java.util.List;
 
 public interface AppDAO {
 
@@ -14,4 +17,20 @@ public interface AppDAO {
     InstructorDetail findInstructorDetailById(int theId);
 
     void deleteInstructorDetailById(int theId);
+
+    List<Course> findCoursesByInstructorId(int theId);
+
+    Instructor findInstructorByIdJoinFetch(int theId);
+
+    void update(Instructor tempInstructor);
+
+    void update(Course tempCourse);
+
+    Course findCourseById(int theId);
+
+    void deleteCourseById(int theId);
+
+    void save(Course theCourse);
+
+    Course findCourseAndReviewsByCourseId(int theId);
 }
